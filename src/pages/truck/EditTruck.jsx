@@ -26,7 +26,7 @@ const EditTruck = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://transport-system-api.vercel.app/get-truck-id/${id}`
+          `https://transport-system-api.vercel.app/truck/get-truck-id/${id}`
         );
         setTruck(response.data.truckExist);
         console.log(response.data.truckExist);
@@ -41,7 +41,7 @@ const EditTruck = () => {
     e.preventDefault();
     await axios
       .put(
-        `https://transport-system-api.vercel.app/update-truck/user/${id}`,
+        `https://transport-system-api.vercel.app/truck/update-truck/user/${id}`,
         truck
       )
       .then((response) => {

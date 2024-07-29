@@ -24,7 +24,7 @@ const AddTruck = () => {
   const SubmitForm = async (e) => {
     e.preventDefault();
     await axios
-      .post("https://transport-system-api.vercel.app/create-truck", truck)
+      .post("https://transport-system-api.vercel.app/truck/create-truck", truck)
       .then((response) => {
         toast.success("Truck Created Successfully");
         navigate("/truck");
