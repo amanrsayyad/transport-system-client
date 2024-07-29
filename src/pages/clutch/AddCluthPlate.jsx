@@ -29,7 +29,10 @@ const AddCluthPlate = () => {
   const SubmitForm = async (e) => {
     e.preventDefault();
     await axios
-      .post("http://localhost:8000/clutch-plate/create-clutch-plate", plate)
+      .post(
+        "https://transport-system-api.vercel.app/clutch-plate/create-clutch-plate",
+        plate
+      )
       .then((response) => {
         toast.success("Clutch Plate Created Successfully");
         navigate("/cluth-plate");

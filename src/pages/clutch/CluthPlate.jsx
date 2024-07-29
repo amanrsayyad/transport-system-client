@@ -24,7 +24,7 @@ const CluthPlate = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/clutch-plate/get-clutch-plate"
+          "https://transport-system-api.vercel.app/clutch-plate/get-clutch-plate"
         );
         setLists(response.data.plates);
         setFilteredNo(response.data.plates);
@@ -38,7 +38,9 @@ const CluthPlate = () => {
 
   const deleteUser = async (id) => {
     await axios
-      .delete(`http://localhost:8000/clutch-plate/delete-clutch-plate/${id}`)
+      .delete(
+        `https://transport-system-api.vercel.app/clutch-plate/delete-clutch-plate/${id}`
+      )
       .then((response) => {
         setLists((prevUser) => prevUser.filter((item) => item._id !== id));
         toast.success("Deleted Record Successfully");

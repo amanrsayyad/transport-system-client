@@ -36,7 +36,7 @@ const EditClutch = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/clutch-plate/get-clutch-plate-id/${id}`
+          `https://transport-system-api.vercel.app/clutch-plate/get-clutch-plate-id/${id}`
         );
         setPlate(response.data.plateExist);
         console.log(response.data.plateExist);
@@ -51,7 +51,7 @@ const EditClutch = () => {
     e.preventDefault();
     await axios
       .put(
-        `http://localhost:8000/clutch-plate/update-clutch-plate/${id}`,
+        `https://transport-system-api.vercel.app/clutch-plate/update-clutch-plate/${id}`,
         plate
       )
       .then((response) => {

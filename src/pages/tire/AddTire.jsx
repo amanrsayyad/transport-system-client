@@ -34,7 +34,10 @@ const AddTire = () => {
   const SubmitForm = async (e) => {
     e.preventDefault();
     await axios
-      .post("http://localhost:8000/api/create-tire-maintenance", tire)
+      .post(
+        "https://transport-system-api.vercel.app/api/create-tire-maintenance",
+        tire
+      )
       .then((response) => {
         toast.success("Tire Maintenance Created Successfully");
         navigate("/tire");

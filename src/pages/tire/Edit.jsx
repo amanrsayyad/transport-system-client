@@ -36,7 +36,7 @@ const Edit = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/get-tire-id/${id}`
+          `https://transport-system-api.vercel.app/api/get-tire-id/${id}`
         );
         setTire(response.data.tireExist);
         console.log(response.data.tireExist);
@@ -50,7 +50,10 @@ const Edit = () => {
   const submitForm = async (e) => {
     e.preventDefault();
     await axios
-      .put(`http://localhost:8000/api/update-tire/user/${id}`, tire)
+      .put(
+        `https://transport-system-api.vercel.app/api/update-tire/user/${id}`,
+        tire
+      )
       .then((response) => {
         toast.success("Tire Maintenance Updated Successfully");
         navigate("/tire");

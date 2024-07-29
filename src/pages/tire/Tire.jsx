@@ -23,7 +23,7 @@ const Tire = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/get-tire-maintenance"
+          "https://transport-system-api.vercel.app/api/get-tire-maintenance"
         );
         setLists(response.data.tires);
         setFilteredNo(response.data.tires);
@@ -37,7 +37,7 @@ const Tire = () => {
 
   const deleteUser = async (id) => {
     await axios
-      .delete(`http://localhost:8000/api/delete-tire/${id}`)
+      .delete(`https://transport-system-api.vercel.app/api/delete-tire/${id}`)
       .then((responce) => {
         setLists((prevUser) => prevUser.filter((item) => item._id !== id));
         toast.success("Deleted Record Successfully");
